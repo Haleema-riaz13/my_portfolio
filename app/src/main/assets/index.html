@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haleema | Software Engineer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0d1117;
+            --card-bg: #161b22;
+            --accent: #58a6ff;
+            --accent-dim: #1f6feb; /* Slightly darker blue for hover */
+            --text: #c9d1d9;
+            --text-dim: #8b949e;
+            --border: #30363d;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        nav {
+            position: fixed; top: 0; width: 100%;
+            background: rgba(13, 17, 23, 0.95);
+            padding: 15px 5%;
+            display: flex; justify-content: space-between;
+            align-items: center; z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+        .logo { font-weight: 800; color: var(--accent); font-size: 1.2rem; }
+        .nav-links a {
+            color: var(--text); text-decoration: none;
+            margin-left: 20px; font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center; padding: 0 20px;
+            background: radial-gradient(circle at center, #161b22 0%, #0d1117 100%);
+        }
+
+        /* Hero Animation */
+        .hero h1 {
+            font-size: 3.5rem; font-weight: 800; margin-bottom: 15px;
+            animation: fadeInDown 1s ease-out;
+        }
+        .hero p {
+            color: var(--text-dim); max-width: 650px; font-size: 1.1rem;
+            animation: fadeInUp 1s ease-out 0.3s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        section { padding: 100px 5%; max-width: 1200px; margin: 0 auto; }
+        h2 { font-size: 1.8rem; margin-bottom: 30px; display: flex; align-items: center; gap: 10px; }
+        h2::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+
+        .content-box {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: 0.3s ease;
+        }
+        .content-box:hover { border-color: var(--accent); }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: var(--card-bg);
+            padding: 25px; border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex; flex-direction: column;
+            justify-content: space-between;
+        }
+        .card:hover { transform: translateY(-10px); border-color: var(--accent); background: #1c2128; }
+        .card h3 { color: var(--accent); margin-bottom: 12px; font-size: 1.2rem; }
+
+        /* Professional Repository Link Style */
+        .project-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 18px;
+            background-color: transparent;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--accent);
+            border-radius: 6px;
+            transition: 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .project-link:hover {
+            background-color: var(--accent);
+            color: var(--bg); /* Dark text on light background */
+            box-shadow: 0 4px 12px rgba(88, 166, 255, 0.3);
+        }
+
+        .skills-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        .skill-category h4 { color: var(--accent); margin-bottom: 15px; font-size: 1rem; text-transform: uppercase; }
+        .skill-list li {
+            background: #21262d; padding: 8px 15px; border-radius: 6px;
+            margin-bottom: 8px; font-size: 0.85rem; border: 1px solid var(--border);
+            display: flex; align-items: center; gap: 10px;
+            transition: 0.3s;
+        }
+        .skill-list li:hover { border-color: var(--accent); transform: translateX(5px); }
+
+        .btn-group { display: flex; gap: 15px; margin-top: 25px; }
+        .primary-btn, .outline-btn {
+            padding: 10px 25px;
+            text-decoration: none; border-radius: 6px; font-weight: 600; transition: 0.3s;
+            cursor: pointer;
+        }
+        .primary-btn { background: var(--accent); color: white; border: none; }
+        .outline-btn { border: 1px solid var(--accent); color: var(--accent); background: transparent; }
+        .primary-btn:hover { box-shadow: 0 5px 15px rgba(88, 166, 255, 0.4); }
+
+        footer { padding: 40px 5%; background: #010409; border-top: 1px solid var(--border); text-align: center; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .btn-group { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">HALEEMA.DEV</div>
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1>Hi, I'm <span>Haleema</span></h1>
+    <p>Software Engineering Student specializing in Flutter Frontend Development and UI/UX Design.</p>
+</section>
+
+<section id="about">
+    <h2>About Me</h2>
+    <div class="content-box">
+        <p>I am an aspiring <strong>Frontend Developer</strong> and Software Engineering student specializing in <strong>Flutter</strong>. With a strong command of <strong>UI/UX design</strong>, I have successfully transformed creative ideas into functional mobile interfaces through various hands-on projects.</p>
+    </div>
+</section>
+
+<section id="projects" class="reveal">
+    <h2>Featured Projects</h2>
+    <div class="grid">
+        <div class="card">
+            <div>
+                <h3>GoLahore App</h3>
+                <p>Developed the complete User Interface (UI) and frontend architecture using Flutter. Designed interactive screens for city navigation.</p>
+            </div>
+            <a href="https://github.com/Haleema-riaz13" class="project-link external-link">View Repository →</a>
+        </div>
+        <div class="card">
+            <div>
+                <h3>Mochi Notes</h3>
+                <p>A practice-based notes application featuring a custom Anime-themed UI. Implemented core features like creating and editing personal notes.</p>
+            </div>
+            <a href="https://github.com/Haleema-riaz13" class="project-link external-link">View Repository →</a>
+        </div>
+        <div class="card">
+            <div>
+                <h3>Image Galleria</h3>
+                <p>A responsive application built to showcase images across categories using WebView technology to integrate HTML content.</p>
+            </div>
+            <a href="https://github.com/Haleema-riaz13" class="project-link external-link">View Repository →</a>
+        </div>
+        <div class="card">
+            <div>
+                <h3>Personal Portfolio</h3>
+                <p>A professional web-based portfolio designed to showcase my skills. Built using responsive HTML5, CSS3, and JavaScript.</p>
+            </div>
+            <a href="https://github.com/Haleema-riaz13" class="project-link external-link">View Repository →</a>
+        </div>
+    </div>
+</section>
+
+<section id="skills" class="reveal">
+    <h2>Skills & Expertise</h2>
+    <div class="skills-wrapper">
+        <div class="skill-category">
+            <h4>Development</h4>
+            <ul class="skill-list" style="list-style: none;">
+                <li>▹ Flutter (Frontend)</li>
+                <li>▹ Dart</li>
+                <li>▹ Android Studio</li>
+                <li>▹ HTML5 / CSS3 / JS</li>
+            </ul>
+        </div>
+        <div class="skill-category">
+            <h4>Design</h4>
+            <ul class="skill-list" style="list-style: none;">
+                <li>▹ UI/UX Design</li>
+                <li>▹ Canva Graphics</li>
+                <li>▹ Responsive Layouts</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="reveal">
+    <h2>Get in touch with me </h2>
+    <div class="content-box">
+        <p><strong>Email:</strong><p>
+        <p>haleemariaz1051@gmail.com</p>
+        <p><strong>Phone:</strong><p>
+    </p>0330-4098953</p>
+        <p><strong>Education:</strong><p>
+        <p>BS Software Engineering</p>
+        <div class="btn-group">
+            <a href="https://linkedin.com/in/haleema-r-b72a8a284" class="primary-btn external-link">LinkedIn Profile</a>
+            <a href="https://github.com/Haleema-riaz13" class="outline-btn external-link">GitHub Code</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <span class="footer-logo">HALEEMA.DEV</span>
+    <p>&copy; 2026 Built with Passion & Code</p>
+</footer>
+
+<script>
+    // Scroll Reveal Logic
+    function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150;
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
+            }
+        }
+    }
+
+    window.addEventListener("scroll", reveal);
+    // Initial check on load
+    reveal();
+
+    document.querySelectorAll('.external-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Intent handling via MainActivity.java
+        });
+    });
+</script>
+
+</body>
+</html>
