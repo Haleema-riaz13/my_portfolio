@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Haleema Riaz — Mobile Application Developer (Flutter & Firebase). Portfolio featuring GoLahore, a smart transport app, and other production Flutter projects." />
-    <title>Haleema | Mobile App Developer (Flutter & Firebase)</title>
+    <meta name="description" content="Haleema Riaz — Mobile Application Developer. Portfolio featuring Flutter, Dart, Kotlin, Android, Firebase, GoLahore, and selected 2D / Game UI design work." />
+    <title>Haleema Riaz | Mobile Application Developer · Flutter · Android</title>
     <style>
         :root{
           --bg:#000; --text:#fff; --muted:rgba(255,255,255,.76); --soft:rgba(255,255,255,.12);
@@ -38,6 +38,22 @@
         .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}.skill{border-radius:24px;padding:26px}.skill h4{font-size:22px;margin-bottom:18px}.skill li{list-style:none;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.83)}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:28px}.contact-card{border-radius:26px;padding:30px}.contact-card h3{font-size:44px;line-height:.95;font-weight:400;margin-bottom:14px}.contact-card p,.contact-card a{color:rgba(255,255,255,.82);line-height:1.65}.contact-list{display:grid;gap:12px;margin-top:24px}.contact-list a{display:flex;gap:12px;align-items:center;padding:15px 18px;border-radius:18px}.field{display:block;width:100%;padding:15px 18px;border:none;outline:none;border-radius:18px;background:rgba(255,255,255,.07);color:#fff;margin-bottom:13px;font:inherit}.field::placeholder{color:rgba(255,255,255,.45)}textarea.field{height:120px;resize:none}.footer{padding:30px 7vw;text-align:center;color:rgba(255,255,255,.62);background:#000;border-top:1px solid rgba(255,255,255,.08)}
         .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}.reveal.show{opacity:1;transform:none}
         #scroll-bar{position:fixed;top:0;left:0;height:2px;background:rgba(255,255,255,.7);z-index:200;width:0%;transition:width .1s linear}
+        .app-dev-priority{position:relative;z-index:12;margin-top:-28px}
+        .app-dev-priority:before{content:"";position:absolute;inset:-14px -10px;border-radius:34px;background:radial-gradient(circle at 50% 0%,rgba(180,160,255,.10),transparent 58%);pointer-events:none;z-index:-1}
+        /* portfolio categories */
+        .section-intro{max-width:760px;color:rgba(255,255,255,.72);font-size:17px;line-height:1.65;margin:-12px 0 28px}
+        .app-grid,.design-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:28px}
+        .app-card,.design-card{border-radius:26px;padding:28px;min-height:290px;display:flex;flex-direction:column}
+        .app-card.featured{grid-column:span 2;min-height:330px}
+        .card-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+        .card-meta span{padding:7px 11px;font-size:11px}
+        .app-card h3,.design-card h3{font-size:32px;line-height:1;margin-bottom:12px}
+        .app-card p,.design-card p{color:rgba(255,255,255,.76);font-size:15px;line-height:1.55;max-width:62ch}
+        .role-line{margin-top:16px;font-size:12px;color:rgba(255,255,255,.58);letter-spacing:.3px}
+        .stack-line{margin-top:auto;padding-top:20px;font-size:12px;color:#fff}
+        .behance-card{margin-top:22px;border-radius:26px;padding:28px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+        .design-note{font-size:13px;color:rgba(255,255,255,.55);margin-top:8px;line-height:1.5}
+        @media(max-width:980px){.app-grid,.design-grid{grid-template-columns:1fr}.app-card.featured{grid-column:span 1}.behance-card{flex-direction:column;align-items:flex-start}}
         /* timeline */
         .timeline{position:relative;margin-top:28px;padding-left:26px}
         .timeline:before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,.08))}
@@ -69,7 +85,7 @@
 <div id="scroll-bar"></div>
 <nav>
     <a href="#top" class="logo liquid serif">h</a>
-    <div class="nav-pill liquid"><a href="#top">Home</a><a href="#about">About</a><a href="#experience">Experience</a><a href="#golahore">GoLahore</a><a href="#projects">Work</a><a href="#contact">Contact</a><a class="claim" href="#contact">Let's Talk ↗</a></div>
+    <div class="nav-pill liquid"><a href="#top">Home</a><a href="#about">About</a><a href="#apps">App Development</a><a href="#design">2D &amp; Game UI Design</a><a href="#contact">Contact</a><a class="claim" href="#contact">Let's Talk ↗</a></div>
     <div class="menu-btn liquid" id="menuBtn"><span></span></div>
     <div class="spacer"></div>
 </nav>
@@ -77,9 +93,8 @@
     <div class="close-btn" id="closeMenu">✕</div>
     <a href="#top" class="menu-link">Home</a>
     <a href="#about" class="menu-link">About</a>
-    <a href="#experience" class="menu-link">Experience</a>
-    <a href="#golahore" class="menu-link">GoLahore</a>
-    <a href="#projects" class="menu-link">Work</a>
+    <a href="#apps" class="menu-link">App Development</a>
+    <a href="#design" class="menu-link">2D &amp; Game UI Design</a>
     <a href="#contact" class="menu-link">Contact</a>
     <a href="#contact" class="btn strong liquid menu-link" style="margin-top:8px">Let's Talk ↗</a>
 </div>
@@ -88,11 +103,11 @@
     <div class="hero-content">
         <div class="badge liquid"><span>New</span> Mobile App Developer Portfolio</div>
         <h1 class="serif">Building Mobile Apps From Design to Deployment</h1>
-        <p>I'm a Flutter developer who codes complete, production-ready mobile apps — GoLahore, Mochi Notes, and more — designing the UI/UX first, then building it end-to-end with Dart, Firebase, and REST APIs.</p>
-        <div class="cta"><a class="btn strong liquid" href="#golahore">View Featured Work ↗</a><a class="btn liquid" href="Haleema_Riaz_Resume.pdf" download="Haleema_Riaz_Resume.pdf">📄 Resume</a><a class="btn secondary" href="#projects">View Projects ▶</a></div>
+        <p>I'm a Mobile Application Developer focused on building real mobile apps — from UI/UX and frontend implementation to backend integration. My core stack includes Flutter, Dart, Firebase, Kotlin, and Android development. I also create game UI and 2D design work as a separate creative track.</p>
+        <div class="cta"><a class="btn strong liquid" href="#apps">View Featured Work ↗</a><a class="btn liquid" href="Haleema_Riaz_Resume.pdf" download="Haleema_Riaz_Resume.pdf">📄 Resume</a><a class="btn secondary" href="#design">2D Design ▶</a><a class="btn liquid" href="https://www.behance.net/haleemariaz" target="_blank" rel="noopener">Behance · 2D & UI ↗</a></div>
         <div class="stats">
-            <div class="stat liquid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><strong class="serif">4+</strong><small>Projects Built</small></div>
-            <div class="stat liquid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3 3 17 0 20M12 2c-3 3-3 17 0 20"/></svg><strong class="serif">Full</strong><small>Frontend + Firebase Ready</small></div>
+            <div class="stat liquid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><strong class="serif">5+</strong><small>Mobile App Projects</small></div>
+            <div class="stat liquid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3 3 17 0 20M12 2c-3 3-3 17 0 20"/></svg><strong class="serif">2D</strong><small>Game UI & Visual Design</small></div>
         </div>
         <div class="tech-pills" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:24px;max-width:600px">
             <span class="liquid" style="padding:8px 16px;font-size:13px">✓ Flutter</span>
@@ -116,29 +131,117 @@
     </div>
 </section>
 <main class="portfolio">
-    <section id="about" class="reveal"><h2 class="title serif">About Me</h2><div class="about-grid"><div class="about-card liquid"><p>I'm Haleema Riaz, a Mobile Application Developer with a BS in Computer Science from University of Central Punjab (2022–2026, Graduated). My core work is coding complete Flutter apps — my Final Year Project <strong>GoLahore</strong> is a fully working mobile app, alongside <strong>Mochi Notes</strong>, <strong>Image Galleria</strong>, and <strong>Digital Farm Notes</strong>, all built and coded by me from design to deployment.</p><p>I design the UI/UX in Figma before writing a single line of code, so every app I ship has a clean, well-planned interface — but the real work is the Flutter, Dart, Firebase, and REST API development underneath.</p><p>I'm also currently a UI/UX Design Intern at <strong>Ozi Group Technology</strong>, working on mobile gaming screens and HUDs — an opportunity I took to get hands-on office experience while I continue looking for a full-time Mobile App Developer role.</p></div><div class="metrics"><div class="metric liquid"><strong class="serif">BS</strong><span>Computer Science</span></div><div class="metric liquid"><strong class="serif">1+</strong><span>Year Coding</span></div><div class="metric liquid"><strong class="serif">3+</strong><span>Production Apps</span></div><div class="metric liquid"><strong class="serif">Flutter</strong><span>Core Stack</span></div></div></div></section>
+    <section id="about" class="reveal"><h2 class="title serif">About Me</h2><div class="about-grid"><div class="about-card liquid"><p>I'm Haleema Riaz, a Mobile Application Developer with a BS in Computer Science from University of Central Punjab (2022–2026, Graduated). My core work is coding complete Flutter apps — my Final Year Project <strong>GoLahore</strong> is a fully working mobile app, alongside <strong>Mochi Notes</strong>, <strong>Image Galleria</strong>, and <strong>Digital Farm Notes</strong>, all built and coded by me from design to deployment.</p><p>I design the UI/UX in Figma before writing a single line of code, so every app I ship has a clean, well-planned interface — but the real work is the Flutter, Dart, Firebase, and REST API development underneath.</p><p>I'm also currently a UI/UX Design Intern at <strong>Ozi Group Technology</strong>, working on mobile gaming screens and HUDs — an opportunity I took to get hands-on office experience while I continue looking for a full-time Mobile App Developer role.</p></div><div class="metrics"><div class="metric liquid"><strong class="serif">BS</strong><span>Computer Science</span></div><div class="metric liquid"><strong class="serif">1+</strong><span>Year Coding</span></div><div class="metric liquid"><strong class="serif">5+</strong><span>Mobile Projects</span></div><div class="metric liquid"><strong class="serif">Flutter</strong><span>Core Stack</span></div></div></div></section>
 
     <section id="experience" class="reveal"><h2 class="title serif">Experience</h2><div class="timeline">
         <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-card liquid"><span class="timeline-year serif">2025</span><h3 class="serif" style="font-size:24px;margin:6px 0 4px">Full-Stack Mobile Developer</h3><p style="margin-bottom:6px;color:rgba(255,255,255,.55);font-size:13px">Independent · Jun 2025–Present</p><p>Designed complete UI/UX systems and interactive prototypes, then built responsive cross-platform apps with Flutter, Dart, Firebase, REST APIs, and SQLite — shipping authentication, Cloud Firestore, state management, and local caching for scalable performance.</p></div></div>
         <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-card liquid"><span class="timeline-year serif">2026</span><h3 class="serif" style="font-size:24px;margin:6px 0 4px">UI/UX Design Intern</h3><p style="margin-bottom:6px;color:rgba(255,255,255,.55);font-size:13px">Ozi Group Technology · 2026–Present</p><p>Designed 15+ high-fidelity mobile gaming screens, HUDs, menus, and 2D visual assets using Figma, Photoshop, and Canva. Collaborated with developers to convert game concepts into production-ready UI assets, maintaining visual consistency across devices.</p></div></div>
     </div></section>
-    <section id="golahore" class="feature liquid reveal"><div><h3 class="serif">GoLahore App</h3><p><strong>GoLahore</strong> is my Final Year Project and the strongest project in my portfolio. It is a Lahore-based smart transport app that helps users search routes, compare public/private/hybrid travel options, and choose the best way to reach their destination.</p><p>In this project, I worked from base to final output: first I designed the complete UI/UX in Figma, then I converted the design into a Flutter mobile app frontend. I focused on clean navigation, modern cards, route screens, booking screens, driver flow, safety screens, and a user-friendly transport experience.</p><p>The app includes public transport route planning, private ride booking, hybrid route suggestions, driver mode, offline-first functionality, and ML-based fare prediction — built on a full Firebase and REST API backend. It was successfully demonstrated as a fully functional application at UCP Open House 2026.</p><div><span class="pill liquid">Flutter</span><span class="pill liquid">Dart</span><span class="pill liquid">Firebase</span><span class="pill liquid">REST API</span><span class="pill liquid">Figma UI/UX</span><span class="pill liquid">ML Fare Prediction</span><span class="pill liquid">Offline-First</span></div><div class="cta" style="justify-content:flex-start"><a class="btn strong liquid" href="https://github.com/Haleema-riaz13" target="_blank">GitHub Code ↗</a><a class="btn liquid" href="https://www.figma.com/design/0uwendnqlpaf5RF3rtswhu/GO-LAHORE?m=auto&t=jQU5HZNnBuu9icLc-6" target="_blank">Figma UI/UX ↗</a></div></div><div class="phone"><div class="screen"><div class="route r1"></div><div class="route r2"></div><div class="route r3"></div><div class="dot"></div></div></div></section>
 
-    <section id="projects" class="reveal">
-        <h2 class="title serif">Other Projects</h2>
+
+
+    <section id="apps" class="reveal app-dev-priority" style="margin-top:35px">
+        <div class="label">PRIMARY SPECIALIZATION</div><h2 class="title serif">Mobile App Development</h2>
+        <p class="section-intro">This is the core of my portfolio. These projects represent my application-development work, separate from my game UI and 2D design portfolio. I work across UI implementation, app flows, backend integration, data handling, and Android development.</p>
+
+        <div class="feature liquid" id="golahore" style="margin-bottom:30px"><div><div class="card-meta"><span class="liquid">Final Year Project</span><span class="liquid">Flutter</span><span class="liquid">Dart</span><span class="liquid">Firebase</span></div><h3 class="serif">GoLahore App</h3><p><strong>GoLahore</strong> is my Final Year Project and the flagship of my app-development portfolio. It is a Lahore-based smart transport app that helps users search routes, compare public/private/hybrid travel options, and choose the best way to reach their destination.</p><p>I designed the complete UI/UX in Figma, then built the Flutter frontend myself — route screens, booking screens, driver flow, safety screens — on top of a Firebase and REST API backend, with offline-first support and ML-based fare prediction. It was demonstrated as a fully functional app at UCP Open House 2026.</p><p class="role-line"><strong>My role:</strong> UI/UX Design · Flutter Frontend · Firebase Integration</p><div class="stack-line" style="margin-top:14px">Flutter · Dart · Firebase · REST API · Figma UI/UX · Offline-First</div><div class="cta" style="justify-content:flex-start;margin-top:20px"><a class="btn strong liquid" href="https://github.com/Haleema-riaz13" target="_blank">GitHub Code ↗</a><a class="btn liquid" href="https://www.figma.com/design/0uwendnqlpaf5RF3rtswhu/GO-LAHORE?m=auto&t=jQU5HZNnBuu9icLc-6" target="_blank">Figma UI/UX ↗</a></div></div><div class="phone"><div class="screen"><div class="route r1"></div><div class="route r2"></div><div class="route r3"></div><div class="dot"></div></div></div></div>
+
+        <div class="label" style="margin-top:6px">OTHER APP DEVELOPMENT PROJECTS</div>
+        <div class="app-grid">
+            <article class="app-card liquid">
+                <div class="card-meta"><span class="liquid">In Development</span><span class="liquid">Kotlin</span><span class="liquid">Android</span></div>
+                <h3 class="serif">MedSync Care</h3>
+                <p>An Android healthcare application currently under development. This project represents my Kotlin-based Android development work and my ability to move beyond Flutter when a project requires native Android development.</p>
+                <p class="role-line"><strong>My role:</strong> Android App Development · Kotlin · UI Implementation</p>
+                <div class="stack-line">Kotlin · Android Studio · Android UI</div>
+            </article>
+
+            <article class="app-card liquid">
+                <div class="card-meta"><span class="liquid">Mobile App</span><span class="liquid">Flutter</span><span class="liquid">Dart</span></div>
+                <h3 class="serif">Digital Farmer</h3>
+                <p>A Flutter-based mobile application focused on a practical farmer workflow. My contribution is centered on the frontend implementation and mobile interface.</p>
+                <p class="role-line"><strong>My role:</strong> Flutter Frontend · UI Implementation</p>
+                <div class="stack-line">Flutter · Dart · Mobile UI</div>
+            </article>
+
+            <article class="app-card liquid">
+                <div class="card-meta"><span class="liquid">Mobile App</span><span class="liquid">Flutter</span><span class="liquid">Dart</span></div>
+                <h3 class="serif">Mochi Notes</h3>
+                <p>A Flutter notes application built around a clean, friendly mobile experience. It demonstrates practical CRUD flows including creating, editing, organizing, and deleting notes.</p>
+                <p class="role-line"><strong>My role:</strong> Flutter Development · Mobile UI · CRUD</p>
+                <div class="stack-line">Flutter · Dart · CRUD · Mobile UI</div>
+            </article>
+
+            <article class="app-card liquid">
+                <div class="card-meta"><span class="liquid">Android Project</span><span class="liquid">Java</span><span class="liquid">HTML</span></div>
+                <h3 class="serif">Image Gallery App</h3>
+                <p>An image-gallery project focused on presenting and browsing visual content through a lightweight interface. The repository includes Java and HTML, so the portfolio lists both technologies rather than incorrectly presenting it as a Flutter project.</p>
+                <p class="role-line"><strong>Project focus:</strong> Image Presentation · Android / Frontend Implementation</p>
+                <div class="stack-line">Java · HTML · Image Gallery UI</div>
+            </article>
+        </div>
+    </section>
+
+    <section id="design" class="reveal" style="margin-top:95px">
+        <h2 class="title serif">2D & Game UI Design</h2>
+        <p class="section-intro">A separate creative section for my 2D artwork, mobile-game interface concepts, HUDs, and visual design. These are design projects — not mobile app development projects — and my complete visual case studies are available on Behance.</p>
+
+        <div class="design-grid">
+            <article class="design-card liquid">
+                <div class="card-meta"><span class="liquid">Game UI</span><span class="liquid">2D Design</span></div>
+                <h3 class="serif">Cockroach UI</h3>
+                <p>Game interface design created around a cockroach-themed concept, including visual UI elements and a playful game-oriented presentation.</p>
+                <div class="stack-line">Game UI · 2D Visual Design · UI Composition</div>
+            </article>
+
+            <article class="design-card liquid">
+                <div class="card-meta"><span class="liquid">Game UI</span><span class="liquid">2D Design</span></div>
+                <h3 class="serif">Fashion Makeover UI</h3>
+                <p>Fashion-game interface design focused on a polished, character-driven visual style and clear player-facing UI elements.</p>
+                <div class="stack-line">Game UI · 2D Design · Visual Styling</div>
+            </article>
+
+            <article class="design-card liquid">
+                <div class="card-meta"><span class="liquid">Game UI</span><span class="liquid">2D Design</span></div>
+                <h3 class="serif">Keyboard UI</h3>
+                <p>Custom keyboard interface design created as a visual UI project, with attention to layout, readability, and overall screen composition.</p>
+                <div class="stack-line">UI Design · 2D Assets · Visual Interface</div>
+            </article>
+        </div>
+
+        <div class="behance-card liquid">
+            <div>
+                <h3 class="serif" style="font-size:34px">Explore my design portfolio</h3>
+                <p class="design-note">For complete 2D artwork, game UI screens, and visual case studies, visit my Behance profile.</p>
+            </div>
+            <a class="btn strong liquid" href="https://www.behance.net/haleemariaz" target="_blank" rel="noopener">View Behance Portfolio ↗</a>
+        </div>
+
+        <div class="label" style="margin-top:38px">PLAY STORE VISUAL ASSETS — DESIGN CREDITS, NOT MY APPS</div>
+        <p class="section-intro" style="margin-top:0">Store screenshots and promotional visuals I designed for the following mobile-game titles, as part of my UI/UX design internship. Design work only — these games were developed by the studio's own game team, not coded by me.</p>
         <div class="marquee-wrap">
             <div class="marquee-track" id="marqueeTrack">
-                <div class="project liquid"><div class="emoji">🌾</div><h4>Digital Farm Notes</h4><p>A production-quality Flutter app for farmers to log and track field notes. Built with Firebase backend, clean data entry flows, and a simple, farmer-friendly interface from Figma to final build.</p><small>Flutter · Firebase · UI/UX Design</small></div>
-                <div class="project liquid"><div class="emoji">📝</div><h4>Mochi Notes</h4><p>A Flutter notes app created to practice mobile app development. It includes note creation, editing, deleting, organized note cards, and an anime-inspired interface with a soft visual style.</p><small>Flutter · Dart · CRUD · Mobile UI</small></div>
-                <div class="project liquid"><div class="emoji">🖼️</div><h4>Image Galleria</h4><p>A responsive image gallery project focused on clean presentation and smooth browsing. I worked on the Flutter interface, image layout, WebView integration, and user-friendly visual display.</p><small>Flutter · WebView · Responsive Design</small></div>
-                <div class="project liquid"><div class="emoji">💼</div><h4>Portfolio Website</h4><p>A cinematic personal portfolio made to present my Flutter, Firebase, and UI/UX work. It includes glass-style cards, animated sections, video backgrounds, smooth scrolling, and a modern aesthetic layout.</p><small>HTML · CSS · JavaScript · Portfolio UI</small></div>
-                <!-- duplicate set for seamless loop -->
-                <div class="project liquid" aria-hidden="true"><div class="emoji">🌾</div><h4>Digital Farm Notes</h4><p>A production-quality Flutter app for farmers to log and track field notes. Built with Firebase backend, clean data entry flows, and a simple, farmer-friendly interface from Figma to final build.</p><small>Flutter · Firebase · UI/UX Design</small></div>
-                <div class="project liquid" aria-hidden="true"><div class="emoji">📝</div><h4>Mochi Notes</h4><p>A Flutter notes app created to practice mobile app development. It includes note creation, editing, deleting, organized note cards, and an anime-inspired interface with a soft visual style.</p><small>Flutter · Dart · CRUD · Mobile UI</small></div>
-                <div class="project liquid" aria-hidden="true"><div class="emoji">🖼️</div><h4>Image Galleria</h4><p>A responsive image gallery project focused on clean presentation and smooth browsing. I worked on the Flutter interface, image layout, WebView integration, and user-friendly visual display.</p><small>Flutter · WebView · Responsive Design</small></div>
-                <div class="project liquid" aria-hidden="true"><div class="emoji">💼</div><h4>Portfolio Website</h4><p>A cinematic personal portfolio made to present my Flutter, Firebase, and UI/UX work. It includes glass-style cards, animated sections, video backgrounds, smooth scrolling, and a modern aesthetic layout.</p><small>HTML · CSS · JavaScript · Portfolio UI</small></div>
+                <div class="project liquid"><div class="emoji">🦖</div><h4>Angry Dinosaur</h4><p>Play Store screenshot / game visual design showcase.</p><small>Game UI · Store Creative</small></div>
+                <div class="project liquid"><div class="emoji">🦍</div><h4>Apes Game</h4><p>Play Store screenshot / game visual design showcase.</p><small>Game UI · Store Creative</small></div>
+                <div class="project liquid"><div class="emoji">🐱</div><h4>Cat Game</h4><p>Play Store screenshot / game visual design showcase.</p><small>Game UI · Store Creative</small></div>
+                <div class="project liquid"><div class="emoji">🚨</div><h4>Obby Prison</h4><p>Play Store screenshot / game visual design showcase.</p><small>Game UI · Store Creative</small></div>
+                <div class="project liquid"><div class="emoji">🏓</div><h4>Ping Pong</h4><p>Play Store screenshot / game visual design showcase.</p><small>Game UI · Store Creative</small></div>
+                <div class="project liquid"><div class="emoji">👸</div><h4>Running Doll Princess</h4><p>Play Store screenshot / game visual design showcase.</p><small>Game UI · Store Creative</small></div>
+                <div class="project liquid"><div class="emoji">🐼</div><h4>Shooter Panda</h4><p>Play Store screenshot / game visual design showcase.</p><small>Game UI · Store Creative</small></div>
+                <div class="project liquid"><div class="emoji">🏎️</div><h4>Traffic Highway</h4><p>Play Store screenshot / game visual design showcase.</p><small>Game UI · Store Creative</small></div>
+
+                <div class="project liquid" aria-hidden="true"><div class="emoji">🦖</div><h4>Angry Dinosaur</h4><p>Play Store screenshot / game visual design showcase.</p><small>Game UI · Store Creative</small></div>
+                <div class="project liquid" aria-hidden="true"><div class="emoji">🦍</div><h4>Apes Game</h4><p>Play Store screenshot / game visual design showcase.</p><small>Game UI · Store Creative</small></div>
+                <div class="project liquid" aria-hidden="true"><div class="emoji">🐱</div><h4>Cat Game</h4><p>Play Store screenshot / game visual design showcase.</p><small>Game UI · Store Creative</small></div>
+                <div class="project liquid" aria-hidden="true"><div class="emoji">🚨</div><h4>Obby Prison</h4><p>Play Store screenshot / game visual design showcase.</p><small>Game UI · Store Creative</small></div>
+                <div class="project liquid" aria-hidden="true"><div class="emoji">🏓</div><h4>Ping Pong</h4><p>Play Store screenshot / game visual design showcase.</p><small>Game UI · Store Creative</small></div>
+                <div class="project liquid" aria-hidden="true"><div class="emoji">👸</div><h4>Running Doll Princess</h4><p>Play Store screenshot / game visual design showcase.</p><small>Game UI · Store Creative</small></div>
+                <div class="project liquid" aria-hidden="true"><div class="emoji">🐼</div><h4>Shooter Panda</h4><p>Play Store screenshot / game visual design showcase.</p><small>Game UI · Store Creative</small></div>
+                <div class="project liquid" aria-hidden="true"><div class="emoji">🏎️</div><h4>Traffic Highway</h4><p>Play Store screenshot / game visual design showcase.</p><small>Game UI · Store Creative</small></div>
             </div>
         </div>
+
+        <div class="design-note" style="margin-top:18px">Game UI & store screenshots are presented here as design/visual work. This portfolio does not imply that every showcased game is personally developed or published by me.</div>
     </section>
 
     <section id="skills" class="reveal"><h2 class="title serif">Skills & Tools</h2>
@@ -148,8 +251,8 @@
             <div class="skillbar"><div class="skillbar-top"><span>Dart</span><span>95%</span></div><div class="skillbar-track" style="--pct:95%"><div class="skillbar-fill"></div></div></div>
             <div class="skillbar" style="margin-bottom:0"><div class="skillbar-top"><span>Figma</span><span>90%</span></div><div class="skillbar-track" style="--pct:90%"><div class="skillbar-fill"></div></div></div>
         </div>
-        <div class="skills"><div class="skill liquid"><h4>Languages & Frameworks</h4><ul><li>Dart & Flutter</li><li>HTML, CSS & JavaScript</li><li>C++ / Python</li><li>Android Studio</li></ul></div><div class="skill liquid"><h4>Backend & Data</h4><ul><li>Firebase (Firestore)</li><li>RESTful APIs</li><li>SQLite / MySQL</li><li>Authentication & Caching</li></ul></div><div class="skill liquid"><h4>Design & Tools</h4><ul><li>Figma · Photoshop · Canva</li><li>Git / GitHub · VS Code</li><li>Streamlit</li><li>OOP & Data Structures</li></ul></div></div></section>
-    <section id="contact" class="reveal"><h2 class="title serif">Let's Talk</h2><div class="contact-grid"><div class="contact-card liquid"><p>For Flutter app work, mobile app development roles, or project collaboration, you can contact me anytime.</p><div class="contact-list"><a class="liquid" href="mailto:haleemariaz1051@gmail.com">✉️ haleemariaz1051@gmail.com</a><a class="liquid" href="tel:+923304098953">📞 0330-4098953</a><a class="liquid" target="_blank" href="https://linkedin.com/in/haleema-r-b72a8a284">💼 LinkedIn Profile</a><a class="liquid" target="_blank" href="https://github.com/Haleema-riaz13">🐙 GitHub Profile</a></div></div><div class="contact-card liquid" style="display:flex;flex-direction:column;justify-content:space-between;gap:24px">
+        <div class="skills"><div class="skill liquid"><h4>Mobile Development</h4><ul><li>Flutter & Dart</li><li>Kotlin · Android</li><li>Java</li><li>Android Studio</li></ul></div><div class="skill liquid"><h4>Backend & Data</h4><ul><li>Firebase / Firestore</li><li>REST APIs</li><li>SQLite / MySQL</li><li>Authentication & Data Flows</li></ul></div><div class="skill liquid"><h4>UI/UX & 2D Design</h4><ul><li>Figma</li><li>Photoshop · Canva</li><li>Game UI / HUD Design</li><li>2D Visual Assets</li></ul></div></div></section>
+    <section id="contact" class="reveal"><h2 class="title serif">Let's Talk</h2><div class="contact-grid"><div class="contact-card liquid"><p>For Flutter app work, mobile app development roles, or project collaboration, you can contact me anytime.</p><div class="contact-list"><a class="liquid" href="mailto:haleemariaz1051@gmail.com">✉️ haleemariaz1051@gmail.com</a><a class="liquid" href="tel:+923304098953">📞 0330-4098953</a><a class="liquid" target="_blank" href="https://linkedin.com/in/haleema-r-b72a8a284">💼 LinkedIn Profile</a><a class="liquid" target="_blank" href="https://github.com/Haleema-riaz13">🐙 GitHub Profile</a><a class="liquid" target="_blank" href="https://www.behance.net/haleemariaz">🎨 Behance (2D / Game UI)</a></div></div><div class="contact-card liquid" style="display:flex;flex-direction:column;justify-content:space-between;gap:24px">
         <div class="avail-badge" style="display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);width:fit-content">
             <span style="width:9px;height:9px;border-radius:50%;background:#6effa0;box-shadow:0 0 10px #6effa0;flex:none"></span>
             <span style="font-size:13px;color:rgba(255,255,255,.85);font-weight:500">Available for job opportunities</span>
@@ -172,7 +275,7 @@
         </div>
     </div></div></section>
 </main>
-<footer class="footer">Designed & Developed by <strong>Haleema Riaz</strong> — Flutter Developer</footer>
+<footer class="footer">Designed & Developed by <strong>Haleema Riaz</strong> — Mobile Application Developer · Flutter · Android · UI/UX</footer>
 
 <script>
     /* Fading videos (simple opacity-in on load only) */
